@@ -1,6 +1,1 @@
-https://github.com/g0b4/posmotri_v_okno-main
-
-# Яндекс Практикум, практическая работа "Посмотри В Окно"
-
-
-Данное приложение позволяет "выглянуть" из окон самых разных городов мира.
+https://github.com/g0b4/posmotri_v_okno-main.git
