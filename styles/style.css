@@ -4,6 +4,32 @@
   box-sizing: border-box;
 }
 
+h1,
+
+h2,
+
+h3,
+
+h4,
+
+p,
+
+ul,
+
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+
 /*------------------- ОСНОВА ------------------- */
 
 html {
@@ -18,7 +44,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -37,7 +63,7 @@ html {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   color: #fff;
   font-style: normal;
   font-weight: 700;
@@ -53,14 +79,6 @@ html {
   inline-size: 399px;
 }
 
-.more-button:active {
-  background-color: #545050;
-}
-
-.more-button:hover {
-  text-decoration: underline #fff;
-}
-
 .button:focus {
   outline: none;
 }
@@ -74,7 +92,7 @@ html {
 }
 
 .button:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
   outline-offset: 1px;
 }
 
@@ -116,20 +134,9 @@ html {
   gap: 40px;
 }
 
-.form {
-  display: flex;
-}
-
-.h2 {
-  display: flex;
-}
-
-.search_form {
-  display: flex;
-}
 
 .search-form__fieldset-title {
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -148,7 +155,9 @@ html {
   align-items: flex-start;
   gap: 15px;
 }
+
 .search-form__label {
+  align-items: center;
   display: flex;
   flex-direction: row;
   cursor: pointer;
@@ -156,7 +165,7 @@ html {
 
 .search-form__textfield {
   inline-size: 225px;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   color: #ffff;
   background: transparent;
@@ -178,10 +187,6 @@ html {
   cursor: pointer;
 }
 
-.search-form__submit-button:hover {
-  text-decoration: underline;
-}
-
 .search-form__fieldset {
   border: hidden;
 }
@@ -199,9 +204,6 @@ html {
   outline-offset: 1px;
 }
 
-.search-form__submit-button:active {
-  background-color: #545050;
-}
 
 .search-form__label:has(.search-form__pseudo-checkbox):hover {
   text-decoration: underline;
@@ -219,7 +221,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox {
 /*------------------- КОНТЕНТ ------------------- */
 
 .title {
-  font-family: "Oswald";
+  font-family: "Oswald", Arial, sans-serif;;
   text-transform: uppercase;
   font-style: normal;
   font-weight: 700;
@@ -236,8 +238,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox {
 .content__list {
   position: relative;
   overflow: auto;
-  scrollbar-width: none;
-  width: 399px;
+  width: 418px;
   height: 298px;
 }
 
@@ -245,11 +246,12 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox {
   background-color: #545050;
 }
 
-.content__list-item {
+.content__list-item:not(:last-child) {
   margin-bottom: 32px;
 }
 
 .content__card-link {
+  margin: 2px;
   display: block;
   color: #fff;
   text-decoration: none;
@@ -261,22 +263,28 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox {
 }
 
 .content__video-card-thumbnail {
+  object-fit: cover;
   inline-size: 194px;
   height: 103px;
 }
 
 .content__video-card-title {
-  font-family: "Oswald";
+  max-width: 200px;
+  font-family: "Oswald", Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  overflow: hidden;
 }
 
 .content__video-card-description {
+  max-width: 200px;
   margin-top: 6px;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -300,21 +308,3 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox {
   outline-offset: 1px;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-ol {
-  list-style: none;
-}
